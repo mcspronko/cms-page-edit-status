@@ -53,8 +53,8 @@ class SavePlugin
         Save $controller,
         Redirect $resultRedirect
     ) {
-        if ($controller->getRequest()->getParam('back', false) === 'duplicate') {
-            // change status to closed
+        if ($controller->getRequest()->getParam('back') === 'duplicate') {
+            $this->pageStatusUpdater->execute(StatusInterface::CODE_CLOSED);
         } elseif ($controller->getRequest()->getParam('back')) {
             // do nothing
         } else {
