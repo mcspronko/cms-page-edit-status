@@ -10,6 +10,7 @@ namespace Pronko\CmsPageEditStatus\Plugin;
 use Magento\Cms\Controller\Adminhtml\Page\Edit;
 use Magento\Framework\Controller\ResultInterface;
 use Magento\Framework\Exception\LocalizedException;
+use Pronko\CmsPageEditStatus\Api\Data\StatusInterface;
 use Pronko\CmsPageEditStatus\Service\PageStatusUpdater;
 use Psr\Log\LoggerInterface;
 
@@ -51,7 +52,7 @@ class EditPlugin
         $resultPage
     ) {
         try {
-            $this->pageStatusUpdater->execute();
+            $this->pageStatusUpdater->execute(StatusInterface::CODE_EDIT);
         } catch (LocalizedException $exception) {
             $this->logger->critical($exception);
         }

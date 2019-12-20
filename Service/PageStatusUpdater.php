@@ -9,6 +9,7 @@ namespace Pronko\CmsPageEditStatus\Service;
 
 use Magento\Backend\Model\Auth;
 use Magento\Backend\Model\Auth\Credential\StorageInterface;
+use Magento\Framework\Exception\AlreadyExistsException;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
 use Magento\User\Model\User;
@@ -62,9 +63,11 @@ class PageStatusUpdater
     }
 
     /**
+     * @param string $documentStatus
      * @throws LocalizedException
+     * @throws AlreadyExistsException
      */
-    public function execute()
+    public function execute(string $documentStatus)
     {
         try {
             $page = $this->currentPage->get();
@@ -83,12 +86,13 @@ class PageStatusUpdater
             $data = [
                 'current_timestamp' => time(),
                 'updated_at' => time(),
+                'status' => $documentStatus,
             ];
         } else {
             $data = [
                 'user_id' => $userId,
                 'page_id' => $pageId,
-                'status' => 'edit',
+                'status' => $documentStatus,
                 'current_timestamp' => time(),
             ];
         }

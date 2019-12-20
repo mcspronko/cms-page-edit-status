@@ -12,4 +12,9 @@
         <plugin name="PronkoCmsPageEditStatusEditPlugin"
                 type="Pronko\CmsPageEditStatus\Plugin\EditPlugin" />
     </type>
+
+    <type name="Magento\Cms\Controller\Adminhtml\Page\Save">
+        <plugin name="PronkoCmsPageEditStatusSavePlugin"
+                type="Pronko\CmsPageEditStatus\Plugin\SavePlugin" />
+    </type>
 </config>
