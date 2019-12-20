@@ -1,0 +1,21 @@
+{
+    "pronko_cms_page_status": {
+        "column": {
+            "record_id": true,
+            "user_id": true,
+            "page_id": true,
+            "status": true,
+            "create_at": true,
+            "update_at": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "index": {
+            "PRONKO_CMS_PAGE_STATUS_USER_ID_PAGE_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "PRONKO_CMS_PAGE_STATUS_USER_ID_PAGE_ID": true
+        }
+    }
+}

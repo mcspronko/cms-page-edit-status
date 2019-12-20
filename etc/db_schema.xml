@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Pronko Consulting (https://www.pronkoconsulting.com)
+ * See LICENSE for the license details.
+ */
+ -->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="pronko_cms_page_status" resource="default" engine="innodb" comment="Pronko CMS Page Document Status">
+        <column xsi:type="smallint" name="record_id" padding="6" unsigned="false" nullable="false" identity="true"
+                comment="Record ID"/>
+
+        <column xsi:type="int" name="user_id" padding="10" unsigned="true" nullable="false"
+                comment="User ID"/>
+        <column xsi:type="smallint" name="page_id" padding="6" unsigned="false" nullable="false"
+                comment="Page ID"/>
+
+        <column xsi:type="varchar" name="status" nullable="true" length="40"
+                comment="Document Status"/>
+
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Page Creation Time"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP"
+                comment="Page Modification Time"/>
+        <column xsi:type="timestamp" name="current_timestamp" on_update="false" nullable="true" comment="Created At"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="record_id"/>
+        </constraint>
+
+<!--        <constraint xsi:type="unique" referenceId="PRONKO_CMS_PAGE_STATUS_USER_ID_PAGE_ID">-->
+<!--            <column name="user_id"/>-->
+<!--            <column name="page_id"/>-->
+<!--        </constraint>-->
+    </table>
+</schema>

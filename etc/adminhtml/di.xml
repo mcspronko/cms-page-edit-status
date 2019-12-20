@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Pronko Consulting (https://www.pronkoconsulting.com)
+ * See LICENSE for license details.
+ */
+ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <type name="Magento\Cms\Controller\Adminhtml\Page\Edit">
+        <plugin name="PronkoCmsPageEditStatusEditPlugin"
+                type="Pronko\CmsPageEditStatus\Plugin\EditPlugin" />
+    </type>
+</config>
