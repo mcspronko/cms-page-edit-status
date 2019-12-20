@@ -9,8 +9,10 @@
     * [Done] Document Status Management Service to update/create new Document Status
 * Tracking Capability
   * [Done] Track CMS Page open and update/create a record.
-  * Track that CMS Page is closed 
-    * Track "Back", "Save & Close", and "Save & Duplicate"
+  * [In Progress] Track that CMS Page is closed
+    * [In Progress] "Save & Close" button 
+    * [Open] Track "Back" button
+    * [Open] "Save & Duplicate" button
     * [Advanced] Ping backend with an AJAX request and send current page_id and user_id to be stored/updated in a Document Status table
     * Cron which checks all documents with an "active" status and update status to "closed"
 * [Done] Rendering Capability
