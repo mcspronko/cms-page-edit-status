@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
+    <router id="admin">
+        <route id="pronko_cms_edit_status" frontName="pronko_cms_edit_status">
+            <module name="Pronko_CmsPageEditStatus" />
+        </route>
+    </router>
+</config>

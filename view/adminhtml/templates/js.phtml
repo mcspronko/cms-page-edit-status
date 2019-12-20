@@ -1,0 +1,28 @@
+<?php
+/**
+ * Copyright © Pronko Consulting (https://www.pronkoconsulting.com)
+ * See LICENSE for the license details.
+ */
+declare(strict_types=1);
+
+use Magento\Framework\View\Element\Template;
+/** @var Template $block */
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "status-tracker": {
+                        "component": "Pronko_CmsPageEditStatus/js/status-tracker",
+                        "config": {
+                            "updateStatusUrl": "<?= $block->getUrl('pronko_cms_edit_status/status/update'); ?>",
+                            "pageId": "<?= $block->getRequest()->getParam('page_id'); ?>",
+                            "backButtonUrl": "<?= $block->getUrl('*/*/'); ?>"
+                        }
+                    }
+                }
+            }
+        }
+    }
+</script>

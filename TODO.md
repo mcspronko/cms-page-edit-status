@@ -11,7 +11,10 @@
   * [Done] Track CMS Page open and update/create a record.
   * [In Progress] Track that CMS Page is closed
     * [Done] "Save & Close" button 
-    * [Open] Track "Back" button
+    * [Done] Track "Back" button
+      * JavaScript event to track "on click" button event. Send AJAX request to update status to a backend.
+      * Create JavaScript UI component
+      * Track on click event
     * [Done] "Save & Duplicate" button
     * [Advanced] Ping backend with an AJAX request and send current page_id and user_id to be stored/updated in a Document Status table
     * Cron which checks all documents with an "active" status and update status to "closed"
