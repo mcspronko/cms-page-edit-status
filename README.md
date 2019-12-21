@@ -4,6 +4,12 @@ The extension adds a new "Document Status" column on the Pages Listing page and 
 
 ![Page Status](docs/page-status.png)
 
+
+Available status changes:
+* When a user opens an edit page, the document status is set to "edit".
+* When a user closes an edit page, the document status is set to "closed".
+* Page Listing Document Status column shows an edit status message "A user is currently editing the page".
+
 The extension is under development, check out the [TODO](TODO.md) for the list of features and its status.
 
 This extension is developed on the live coding streams on YouTube.
