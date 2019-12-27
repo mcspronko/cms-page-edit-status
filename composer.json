@@ -1,0 +1,24 @@
+{
+    "name": "pronko/cms-page-edit-status",
+    "description": "Shows a CMS Page Status e.g. edit/closed",
+    "type": "magento2-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Max Pronko",
+            "email": "max.pronko@gmail.com"
+        }
+    ],
+    "minimum-stability": "alpha",
+    "require": {
+
+    },
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Pronko\\CmsPageEditStatus\\": ""
+        }
+    }
+}
