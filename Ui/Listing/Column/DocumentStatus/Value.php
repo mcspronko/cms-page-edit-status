@@ -73,22 +73,27 @@ class Value
      */
     private function addStatusData(Status $status)
     {
-        $user = $this->userProvider->getById((int)$status->getData('user_id'));
+        try {
+            $user = $this->userProvider->getById((int)$status->getData('user_id'));
+            $firstName = $user->getFirstName();
+        } catch (NoSuchEntityException $exception) {
+            $firstName = 'Anonymous';
+        }
 
         $documentStatus = $status->getData('status');
         if ('open' === $documentStatus) {
-            return $user->getFirstName() . ' is viewing';
+            return $firstName . ' is viewing';
         } elseif ('modified' === $documentStatus) {
             $timeAgo = $this->getTimeElapsed($status->getData('updated_at'));
-            return $user->getFirstName() . ' modified ' . $timeAgo;
+            return $firstName . ' modified ' . $timeAgo;
         } elseif ('not_modified' === $documentStatus) {
             $timeAgo = $this->getTimeElapsed($status->getData('updated_at'));
-            return $user->getFirstName() . ' opened ' . $timeAgo;
+            return $firstName . ' opened ' . $timeAgo;
         } elseif ('closed' === $documentStatus) {
             $timeAgo = $this->getTimeElapsed($status->getData('updated_at'));
-            return $user->getFirstName() . ' edited ' . $timeAgo;
+            return $firstName . ' edited ' . $timeAgo;
         } elseif ('edit' === $documentStatus) {
-            return $user->getFirstName() . ' has been editing since ' . $status->getData('updated_at');
+            return $firstName . ' has been editing since ' . $status->getData('updated_at');
         } else {
             return '';
         }
