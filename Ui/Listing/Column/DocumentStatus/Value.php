@@ -66,7 +66,7 @@ class Value
      */
     private function addStatusData(Status $status)
     {
-        $user = $this->userProvider->getUser((int)$status->getData('user_id'));
+        $user = $this->userProvider->getById((int)$status->getData('user_id'));
 
         $documentStatus = $status->getData('status');
         if ('edit' === $documentStatus) {

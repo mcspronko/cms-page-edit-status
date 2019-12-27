@@ -34,7 +34,7 @@ class UserProvider
      * @param int $userId
      * @return UserInterface
      */
-    public function getUser(int $userId): UserInterface
+    public function getById(int $userId): UserInterface
     {
         /** @var Collection $collection */
         $collection = $this->collectionFactory->create();
