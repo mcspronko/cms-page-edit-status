@@ -88,7 +88,7 @@ class Value
             $timeAgo = $this->getTimeElapsed($status->getData('updated_at'));
             return $user->getFirstName() . ' edited ' . $timeAgo;
         } elseif ('edit' === $documentStatus) {
-            return $user->getFirstName() . ' is editing since ' . $status->getData('updated_at');
+            return $user->getFirstName() . ' has been editing since ' . $status->getData('updated_at');
         } else {
             return '';
         }
