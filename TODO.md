@@ -13,16 +13,14 @@
     * [Done] "Save & Close" button 
     * [Done] Track "Back" button
     * [Done] "Save & Duplicate" button
-    * [Advanced] Ping backend with an AJAX request and send current page_id and user_id to be stored/updated in a Document Status table
-    * Cron which checks all documents with an "edit" status and update status to "closed"
+    * Advanced Feature - Ping backend with an AJAX request and send current page_id and user_id to be stored/updated in a Document Status table
+    * Feature - Cron which checks all documents with an "edit" status and update status to "closed"
 * [Done] Rendering Capability
   * [Done] Render document status information on a CMS Page Listing page.
     * [Done] Add Status collection class into the StatusProvider class
     * [Done] Check if the status exists
-* [Done] John edited the page 10 mins ago.
-* Add user collection result caching for UserProvider class 
+* [Done] John edited the page 10 mins ago. 
 * Feature - Add CMS Page History DB table in order to track changes on a page. Then the Document Status can show "opened" or "edited" statuses. 
-* Refactor DateTime and use Magento Framework DateTime
 
 ## Good to have
 * Show new CMS Page record in the CMS Page Grid to notify about new page is about to be created.
