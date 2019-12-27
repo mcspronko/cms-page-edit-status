@@ -34,6 +34,6 @@ class Update extends Action
 
     public function execute()
     {
-        $this->pageStatusUpdater->execute(StatusInterface::CODE_CLOSED);
+        $this->pageStatusUpdater->execute(StatusInterface::CODE_NOT_MODIFIED);
     }
 }

@@ -54,11 +54,11 @@ class SavePlugin
         Redirect $resultRedirect
     ) {
         if ($controller->getRequest()->getParam('back') === 'duplicate') {
-            $this->pageStatusUpdater->execute(StatusInterface::CODE_CLOSED);
+            $this->pageStatusUpdater->execute(StatusInterface::CODE_MODIFIED);
         } elseif ($controller->getRequest()->getParam('back')) {
             // do nothing
         } else {
-            $this->pageStatusUpdater->execute(StatusInterface::CODE_CLOSED);
+            $this->pageStatusUpdater->execute(StatusInterface::CODE_MODIFIED);
         }
 
         return $resultRedirect;

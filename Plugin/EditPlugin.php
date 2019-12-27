@@ -52,7 +52,7 @@ class EditPlugin
         $resultPage
     ) {
         try {
-            $this->pageStatusUpdater->execute(StatusInterface::CODE_EDIT);
+            $this->pageStatusUpdater->execute(StatusInterface::CODE_OPEN);
         } catch (LocalizedException $exception) {
             $this->logger->critical($exception);
         }

@@ -27,6 +27,10 @@ class StatusProvider
      */
     private $collectionFactory;
 
+    /**
+     * StatusProvider constructor.
+     * @param CollectionFactory $collectionFactory
+     */
     public function __construct(CollectionFactory $collectionFactory)
     {
         $this->collectionFactory = $collectionFactory;
@@ -40,9 +44,9 @@ class StatusProvider
     private function getStatusByPageId(int $pageId): ?Status
     {
         if (!isset($this->statuses[$pageId])) {
+            /** @var Collection $collection */
             $collection = $this->collectionFactory->create();
             $collection->addFieldToFilter('page_id', $pageId);
-            $collection->addFieldToFilter('status', ['in' => ['edit', 'closed']]);
 
             /** @var Status $status */
             $status = $collection->getFirstItem();

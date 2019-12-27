@@ -76,11 +76,19 @@ class Value
         $user = $this->userProvider->getById((int)$status->getData('user_id'));
 
         $documentStatus = $status->getData('status');
-        if ('edit' === $documentStatus) {
-            return $user->getFirstName() . ' is currently editing';
+        if ('open' === $documentStatus) {
+            return $user->getFirstName() . ' is viewing';
+        } elseif ('modified' === $documentStatus) {
+            $timeAgo = $this->getTimeElapsed($status->getData('updated_at'));
+            return $user->getFirstName() . ' modified ' . $timeAgo;
+        } elseif ('not_modified' === $documentStatus) {
+            $timeAgo = $this->getTimeElapsed($status->getData('updated_at'));
+            return $user->getFirstName() . ' opened ' . $timeAgo;
         } elseif ('closed' === $documentStatus) {
             $timeAgo = $this->getTimeElapsed($status->getData('updated_at'));
             return $user->getFirstName() . ' edited ' . $timeAgo;
+        } elseif ('edit' === $documentStatus) {
+            return $user->getFirstName() . ' is editing since ' . $status->getData('updated_at');
         } else {
             return '';
         }
