@@ -2,18 +2,24 @@
 
 The extension adds a new "Document Status" column on the Pages Listing page and shows a message when a page is being edited by an any admin user.
 
-![Page Status](docs/page-status.png)
+![Page Status](docs/page-status-new.png)
 
 
 Available status changes:
-* When a user opens an edit page, the document status is set to "edit".
-* When a user closes an edit page, the document status is set to "closed".
-* Page Listing Document Status column shows an edit status message "A user is currently editing the page".
+* When a user opens a CMS Page in Magento Admin, the document status is set to "open".
+* When a user closes a page, the document status is set to "not modified" or "modified".
+* Page Listing Document Status shows one of the messages:
+  * "user is currently viewing"
+  * "user opened 10 mins ago"
+  * "user edited 5 days ago"
+  * "user modified 12 mins ago"
+
 
 The extension is under development, check out the [TODO](TODO.md) for the list of features and its status.
 
-This extension is developed on the live coding streams on YouTube.
+This extension is developed during Live Coding streams on YouTube.
 Past streams:
+* [Stream from December 27, 2019](https://www.youtube.com/watch?v=oMTJFXnvgkI)
 * [Stream from December 20, 2019](https://www.youtube.com/watch?v=ZnHZeXfJma4)
 * [Stream from December 1, 2019](https://www.youtube.com/watch?v=lULJpQY2w0Q)
 * [Stream from November 8, 2019](https://www.youtube.com/watch?v=sH0s-P3qwq8)
