@@ -18,7 +18,7 @@ use Pronko\CmsPageEditStatus\Service\UserProvider;
 /**
  * Class EditStatus
  */
-class EditStatus extends Column
+class DocumentStatus extends Column
 {
     /**
      * @var StatusProvider
