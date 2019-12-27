@@ -5,10 +5,16 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Max Pronko",
-            "email": "max.pronko@gmail.com"
+            "name": "Pronko Consulting",
+            "homepage": "https://www.pronkoconsulting.com/"
         }
     ],
+    "repositories": {
+        "magento": {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    },
     "minimum-stability": "alpha",
     "require": {
         "magento/module-cms": "103.0.*",
