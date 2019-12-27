@@ -26,6 +26,7 @@
 * [Done] John edited the page 10 mins ago.
 * Add user collection result caching for UserProvider class 
 * Feature - Add CMS Page History DB table in order to track changes on a page. Then the Document Status can show "opened" or "edited" statuses. 
+* Refactor DateTime and use Magento Framework DateTime
 
 ## Good to have
 * Show new CMS Page record in the CMS Page Grid to notify about new page is about to be created.
