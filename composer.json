@@ -20,7 +20,8 @@
         "magento/module-cms": "103.0.*",
         "magento/module-user": "101.1.*",
         "magento/module-backend": "101.*",
-        "magento/framework": "102.*"
+        "magento/framework": "102.*",
+        "psr/log": "~1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~6.5",
