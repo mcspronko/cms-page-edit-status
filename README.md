@@ -11,9 +11,7 @@ Available status changes:
 * Page Listing Document Status shows one of the messages:
   * "user is currently viewing"
   * "user opened 10 mins ago"
-  * "user edited 5 days ago"
-  * "user modified 12 mins ago"
-
+  * "user modified 12 hours ago"
 
 The extension is under development, check out the [TODO](TODO.md) for the list of features and its status.
 
