@@ -42,7 +42,7 @@ class StatusProvider
         if (!isset($this->statuses[$pageId])) {
             $collection = $this->collectionFactory->create();
             $collection->addFieldToFilter('page_id', $pageId);
-            $collection->addFieldToFilter('status', 'edit');
+            $collection->addFieldToFilter('status', ['in' => ['edit', 'closed']]);
 
             /** @var Status $status */
             $status = $collection->getFirstItem();

@@ -17,14 +17,17 @@
       * Track on click event
     * [Done] "Save & Duplicate" button
     * [Advanced] Ping backend with an AJAX request and send current page_id and user_id to be stored/updated in a Document Status table
-    * Cron which checks all documents with an "active" status and update status to "closed"
+    * Cron which checks all documents with an "edit" status and update status to "closed"
 * [Done] Rendering Capability
   * [Done] Render document status information on a CMS Page Listing page.
     * [Done] Add Status collection class into the StatusProvider class
     * [Not needed] Load all statuses/load status by page_id into the statuses variable
     * [Done] Check if the status exists
-* John edited the page 10 mins ago.
-
+* [Done] John edited the page 10 mins ago.
+* Rename \Pronko\CmsPageEditStatus\Ui\Listing\Column\EditStatus to DocumentStatus
+* Add user collection result caching for UserProvider class 
+* Move addStatusData to a separate class
+* Add CMS Page History DB table in order to track changes on a page. Then the Document Status can show "opened" or "edited" statuses. 
 
 ## Good to have
 * Show new CMS Page record in the CMS Page Grid to notify about new page is about to be created.

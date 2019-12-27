@@ -55,6 +55,7 @@ class EditStatus extends Column
     /**
      * @param array $dataSource
      * @return array
+     * @throws \Exception
      */
     public function prepareDataSource(array $dataSource)
     {
@@ -70,11 +71,11 @@ class EditStatus extends Column
     /**
      * @param array $item
      * @return string
-     * @throws NoSuchEntityException
+     * @throws \Exception
      */
     private function prepareItem(array $item)
     {
-        $pageId = (int) $item['page_id'];
+        $pageId = (int)$item['page_id'];
 
         if ($this->statusProvider->hasStatus($pageId)) {
             try {
@@ -91,13 +92,61 @@ class EditStatus extends Column
     /**
      * @param Status $status
      * @return string
+     * @throws \Exception
      */
     private function addStatusData(Status $status)
     {
-        $userId = (int) $status->getData('user_id');
+        $userId = (int)$status->getData('user_id');
 
         $user = $this->userProvider->getUser($userId);
 
-        return $user->getFirstName() . ' is currently editing';
+        $documentStatus = $status->getData('status');
+        if ('edit' === $documentStatus) {
+            return $user->getFirstName() . ' is currently editing';
+        } elseif ('closed' === $documentStatus) {
+            $timeAgo = $this->getTimeElapsed($status->getData('updated_at'));
+            return $user->getFirstName() . ' edited ' . $timeAgo;
+        } else {
+            return '';
+        }
+    }
+
+    /**
+     * @param $datetime
+     * @return string
+     * @throws \Exception
+     */
+    private function getTimeElapsed($datetime)
+    {
+        $now = new \DateTime();
+        $ago = new \DateTime($datetime);
+        $diff = $now->diff($ago);
+
+        $diff->w = floor($diff->d / 7);
+        $diff->d -= $diff->w * 7;
+
+        $string = [
+            'y' => 'year',
+            'm' => 'month',
+            'w' => 'week',
+            'd' => 'day',
+            'h' => 'hour',
+            'i' => 'min',
+            's' => 'sec',
+        ];
+        foreach ($string as $k => &$v) {
+            if ($diff->$k) {
+                if ($k === 's' & $diff->$k < 59) {
+                    unset($string[$k]);
+                } else {
+                    $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+                }
+            } else {
+                unset($string[$k]);
+            }
+        }
+
+        $string = array_slice($string, 0, 1);
+        return $string ? implode(', ', $string) . ' ago' : 'just now';
     }
 }
