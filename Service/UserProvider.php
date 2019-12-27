@@ -9,7 +9,6 @@ namespace Pronko\CmsPageEditStatus\Service;
 
 use Magento\User\Api\Data\UserInterface;
 use Magento\User\Model\ResourceModel\User\Collection;
-use Magento\User\Model\User;
 use Magento\User\Model\ResourceModel\User\CollectionFactory;
 
 /**
@@ -18,13 +17,13 @@ use Magento\User\Model\ResourceModel\User\CollectionFactory;
 class UserProvider
 {
     /**
-     * @var CollectionFactory\
+     * @var CollectionFactory
      */
     private $collectionFactory;
 
     /**
      * UserProvider constructor.
-     * @param CollectionFactory $userFactory
+     * @param CollectionFactory $collectionFactory
      */
     public function __construct(CollectionFactory $collectionFactory)
     {
@@ -39,7 +38,6 @@ class UserProvider
     {
         /** @var Collection $collection */
         $collection = $this->collectionFactory->create();
-
         $collection->addFieldToFilter('main_table.user_id', $userId);
 
         /** @var UserInterface $user */

@@ -12,16 +12,12 @@
   * [In Progress] Track that CMS Page is closed
     * [Done] "Save & Close" button 
     * [Done] Track "Back" button
-      * JavaScript event to track "on click" button event. Send AJAX request to update status to a backend.
-      * Create JavaScript UI component
-      * Track on click event
     * [Done] "Save & Duplicate" button
     * [Advanced] Ping backend with an AJAX request and send current page_id and user_id to be stored/updated in a Document Status table
     * Cron which checks all documents with an "edit" status and update status to "closed"
 * [Done] Rendering Capability
   * [Done] Render document status information on a CMS Page Listing page.
     * [Done] Add Status collection class into the StatusProvider class
-    * [Not needed] Load all statuses/load status by page_id into the statuses variable
     * [Done] Check if the status exists
 * [Done] John edited the page 10 mins ago.
 * Add user collection result caching for UserProvider class 
