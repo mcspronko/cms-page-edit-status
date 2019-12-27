@@ -11,7 +11,10 @@
     ],
     "minimum-stability": "alpha",
     "require": {
-
+        "magento/module-cms": "103.0.*",
+        "magento/module-user": "101.1.*",
+        "magento/module-backend": "101.*",
+        "magento/framework": "102.*"
     },
     "autoload": {
         "files": [
