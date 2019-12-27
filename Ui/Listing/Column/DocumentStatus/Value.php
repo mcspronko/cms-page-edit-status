@@ -11,8 +11,7 @@ use Magento\Framework\Exception\NoSuchEntityException;
 use Pronko\CmsPageEditStatus\Model\Status;
 use Pronko\CmsPageEditStatus\Service\StatusProvider;
 use Pronko\CmsPageEditStatus\Service\UserProvider;
-use Exception;
-use DateTime;
+use Magento\Framework\Stdlib\DateTime\TimezoneInterface;
 
 /**
  * Class Value
@@ -30,16 +29,24 @@ class Value
     private $userProvider;
 
     /**
+     * @var TimezoneInterface
+     */
+    private $timezone;
+
+    /**
      * Value constructor.
      * @param StatusProvider $statusProvider
      * @param UserProvider $userProvider
+     * @param TimezoneInterface $timezone
      */
     public function __construct(
         StatusProvider $statusProvider,
-        UserProvider $userProvider
+        UserProvider $userProvider,
+        TimezoneInterface $timezone
     ) {
         $this->statusProvider = $statusProvider;
         $this->userProvider = $userProvider;
+        $this->timezone = $timezone;
     }
 
     /**
@@ -85,12 +92,8 @@ class Value
      */
     private function getTimeElapsed($datetime): string
     {
-        try {
-            $now = new DateTime();
-            $ago = new DateTime($datetime);
-        } catch (Exception $exception) {
-            return '';
-        }
+        $now = $this->timezone->date();
+        $ago = $this->timezone->date($datetime);
 
         $diff = $now->diff($ago);
 
