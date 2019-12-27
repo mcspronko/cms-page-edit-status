@@ -24,10 +24,8 @@
     * [Not needed] Load all statuses/load status by page_id into the statuses variable
     * [Done] Check if the status exists
 * [Done] John edited the page 10 mins ago.
-* Rename \Pronko\CmsPageEditStatus\Ui\Listing\Column\EditStatus to DocumentStatus
 * Add user collection result caching for UserProvider class 
-* Move addStatusData to a separate class
-* Add CMS Page History DB table in order to track changes on a page. Then the Document Status can show "opened" or "edited" statuses. 
+* Feature - Add CMS Page History DB table in order to track changes on a page. Then the Document Status can show "opened" or "edited" statuses. 
 
 ## Good to have
 * Show new CMS Page record in the CMS Page Grid to notify about new page is about to be created.
