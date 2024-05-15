@@ -1,5 +1,9 @@
 # TODO
 
+## Technical Debt
+* Update module to support Magento 2.4.7
+* GitHub Actions
+
 ## Document Status for CMS Page
 * [Done] Storing Capability:
   * [Done] Create a custom table `pronko_cms_page_status`

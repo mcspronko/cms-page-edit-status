@@ -1,6 +1,6 @@
 {
     "name": "pronko/cms-page-edit-status",
-    "description": "Shows a CMS Page Status e.g. edit/closed",
+    "description": "Pronko Consulting CMS Page Document Status",
     "type": "magento2-module",
     "license": "MIT",
     "authors": [
